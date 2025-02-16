@@ -1,0 +1,45 @@
+# Ignore node_modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.test
+.env.production
+.env.local
+
+# Dependency directories
+bower_components/
+
+# Build artifacts
+dist/
+build/
+coverage/
+.out/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Package lock files (if using yarn or pnpm)
+yarn.lock
+pnpm-lock.yaml
+
+# TypeScript files
+*.tsbuildinfo
+
+# Miscellaneous
+.nyc_output/
