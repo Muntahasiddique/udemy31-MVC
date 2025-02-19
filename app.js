@@ -8,7 +8,9 @@ const db = require('./data/database');
 const authRoutes = require('./routes/auth');
 
 const blogRoutes = require('./routes/blog');
-const mongodbSessionStore = sessionConfig.createSessionStore(session);
+const sessionStore = sessionConfig.createSessionStore(session);
+
+
 
 const app = express();
 
@@ -20,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
-app.use(session(sessionConfig.createSessionStore(mongodbSessionStore)));
+app.use(session(sessionConfig.createSessionConfig(sessionStore)));
 app.use(csrf());
 
 app.use(async function(req, res, next) {
