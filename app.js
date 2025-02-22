@@ -8,7 +8,6 @@ const db = require('./data/database');
 const authRoutes = require('./routes/auth');
 const authmiddleware =require('./middlewares/auth-middlewares')
 const blogRoutes = require('./routes/blog');
-const authmiddleware = require('./middlewares/auth-middlewares');
 const sessionStore = sessionConfig.createSessionStore(session);
 
 
