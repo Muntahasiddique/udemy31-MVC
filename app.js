@@ -10,7 +10,7 @@ const authmiddleware =require('./middlewares/auth-middlewares')
 const blogRoutes = require('./routes/blog');
 const sessionStore = sessionConfig.createSessionStore(session);
 
-
+const csrfTokenMiddleware = require('./middlewares/csrf-token-middleware')
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(session(sessionConfig.createSessionConfig(sessionStore)));
 app.use(csrf());
-
+app.use(csrfTokenMiddleware);
 app.use(authmiddleware);
 
 app.use(blogRoutes);
