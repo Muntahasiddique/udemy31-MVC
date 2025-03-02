@@ -1,5 +1,7 @@
 const User = require('../models/user');
-
+function get404(req , res){
+res.status(404).render('404')
+}
 function signup(req, res) {
   let sessionInputData = req.session.inputData || {
     hasError: false,
@@ -86,5 +88,6 @@ module.exports = {
   login,
   signuppost,
   loginpost,
-  logout
+  logout,
+  get404:get404
 };
