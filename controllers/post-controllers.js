@@ -3,7 +3,9 @@ const validationSession = require('../util/validation-session');
 const ValidateSession = require('../util/validation-session')
 const postIsValid = require('../util/validation')
 function getHome(req, res) {
-    res.render('welcome', { csrfToken: req.csrfToken() });
+    res.render('welcome',
+       //  { csrfToken: req.csrfToken() }
+        );
   }
 
   async function getAdmin (req, res) {
@@ -23,7 +25,7 @@ function getHome(req, res) {
     res.render('admin', {
       posts: posts,
       inputData: sessionInputData,
-      csrfToken: req.csrfToken(),
+     // csrfToken: req.csrfToken(),
     });
   }
   async function createPost (req, res) {
@@ -75,7 +77,7 @@ function getHome(req, res) {
     res.render('single-post', {
       post: post,
       inputData: sessionInputData,
-      csrfToken: req.csrfToken(),
+    //   csrfToken: req.csrfToken(),
     });
   }
   async function updatePost (req, res) {
